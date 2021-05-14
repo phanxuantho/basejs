@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+</body>
+<script>
+const depEmployeeArray = [{
+        id : 1,
+        name : 'Tuan',
+        age : 25,
+        },
+        {
+        id : 2,
+        name : 'Tung',
+        age : 25,
+        },
+        {
+        id : 5,
+        name : 'Thang',
+        age : 31,   
+        }
+]
+const employeeArray = [{
+        id : 1,
+        name : 'Tuan',
+        age : 25,
+        },
+        {
+        id : 3,
+        name : 'Trung',
+        age : 25,   
+        },
+        {
+        id : 4,
+        name : 'Tho',
+        age : 35,   
+        },
+        {
+        id : 5,
+        name : 'Thang',
+        age : 31,   
+        }
+]
+let idDepEmployeeArray = depEmployeeArray.map(o => {
+    return o.id; 
+});
+
+let arr1 = [
+...employeeArray.filter(o => {
+        return idDepEmployeeArray.indexOf(o.id) !== -1;
+}),
+]; 
+
+let arr2 = [
+...employeeArray.filter(o => {
+        return idDepEmployeeArray.indexOf(o.id) === -1;
+}),
+]; 
+
+/////
+if(arr1.length === 0){
+        console.log("Khong co nhan vien !!!")
+}
+else {
+        console.log("So nhan vien thuoc phong A", arr1);
+}
+///
+console.log("So nhan vien con lai",arr2);
+
+</script>
+</html>
